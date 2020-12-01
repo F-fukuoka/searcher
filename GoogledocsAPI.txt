@@ -1,0 +1,8 @@
+Client ID ↴
+572493550352-cv2acm98m0f3isatetlscfqp6trcq7pl.apps.googleusercontent.com
+
+Client Secret
+TLfkcazaO9UQ4ScpjymXtTng
+
+APIキー
+AIzaSyByjiCyUQlR3BCLAf0b6VhdbtqlTufrQDE
