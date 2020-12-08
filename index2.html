@@ -9,29 +9,31 @@
     <button id="btn">start</button>
     <button id="btn2">stop</button>
     <div id="content"></div>
+    //html終了　レイアウト
 
 <script>
 //音声認識の準備
 const speech = new webkitSpeechRecognition();
-speech.lang = 'ja-JP';
+speech.lang = 'ja-JP';//日本語
 
 //使用する変数を用意
 const btn = document.getElementById('btn');
 const btn2 = document.getElementById('btn2');
-const content = document.getElementById('content');
+const content = document.getElementById('content');//文字化したものを表示する場所
 
 
 btn.addEventListener('click' , function() {
     // 音声認識をスタート
     speech.start();
 });
-btn2.addEventListener('click' , function(){
-    //音声認識をストップ
-    speach.stop();
+ btn2.addEventListener('click' , function() {
+    // 音声認識をスタート
+    speech.stop();
 });
+
     //音声自動文字起こし機能
     speech.onresult = function(e) {
-         speech.stop();
+         speech.stop();//音声認識サービスが結果を返したときに音声認識がストップされる
          if(e.results[0].isFinal){
              var autotext =  e.results[0][0].transcript
              console.log(e);
