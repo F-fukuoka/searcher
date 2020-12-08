@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <link href='kutiguse.css' rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+    <title>口癖searcher</title>
+</head>
+<body>
+    <h1>口癖searcher</h1>
+    <div class="bt"><span>
+        <button type="button" class="b1" id="btn" value="submit">
+           <font >START</font>
+        </button>
+        <button type="button" class="b2" id="btn2" value="submit">
+           <font >STOP/font>
+        </button>
+        <button type="button" class="b3" value="submit">
+           <font >SAVE</font>
+        </button>
+             </span>
+    <div id="content"></div>//文字化したものを表示
+    //html終了　画面レイアウト
+
+<script>
+//音声認識の準備
+const speech = new webkitSpeechRecognition();
+speech.lang = 'ja-JP';//日本語で表示
+
+//使用する変数を用意
+const btn = document.getElementById('btn');
+const btn2 = document.getElementById('btn2');
+const content = document.getElementById('content');
+
+
+btn.addEventListener('click' , function() {
+    // 音声認識をスタート
+    speech.start();
+});
+btn2.addEventListener('click' , function(){
+    //音声認識をストップ
+    speech.stop();
+});
+    //音声自動文字起こし機能
+    speech.onresult = function(e) {
+         speech.stop();//音声認識が結果を返したときに文字化を実行(録音はしてる)
+         if(e.results[0].isFinal){
+             var autotext =  e.results[0][0].transcript
+             console.log(e);
+             console.log(autotext);
+             content.innerHTML += '<div>'+ autotext +'</div>';//文字化したものを表示
+          }
+     }
+    //音声認識が止まったと同時に文字化を開始(onend)
+     speech.onend = () => {
+        speech.start()
+     };
+
+
+speech.addEventListener('result' , function(e) {
+   // 音声認識で取得した情報を、コンソール画面に表示
+   console.log(e);
+});
+     // 音声認識で取得した情報を、HTMLに表示
+    const text = e.results[0][0].transcript;
+    content.innerText = text;
+
+</script>
+<body>
+<html>
