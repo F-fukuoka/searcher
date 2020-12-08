@@ -39,7 +39,7 @@ btn2.addEventListener('click' , function(){
              content.innerHTML += '<div>'+ autotext +'</div>';
           }
      }
-
+    //音声認識が止まったと同時に文字化を開始(onend)
      speech.onend = () => {
         speech.start()
      };
