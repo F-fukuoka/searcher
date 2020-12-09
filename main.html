@@ -2,16 +2,18 @@
 <html lang="ja">
 <head>
     <link href='main.css' rel="stylesheet" type="text/css">
+    
     <meta charset="UTF-8">
     <title>口癖searcher</title>
 </head>
 <body>
+   
     <h1>口癖searcher</h1>
     <div class="bt"><span>
-        <button type="button" class="b1" id="btn" value="submit">
+        <button onclick="click();toggleText(btn.id);" type="button" class="b1" id="btn" value="submit">
            <font>START</font>
         </button>
-        <button type="button" class="b2" id="btn2" value="submit">
+        <button type="button" class="b2" id="btn2" value="submit" >
            <font>STOP</font>
         </button>
         <button type="button" class="b3" id="btn3" value="submit">
@@ -27,13 +29,15 @@
         style="padding: 10px; margin-bottom: 10px;
         border: 5px double #333333; border-radius: 10px;" class="text2"></div>
     <!--文字化したものを表示-->
-    <!--html終了　画面レイアウト-->
+    <!--html終了 画面レイアウト-->
 
 <script>
     const btn = document.querySelector('#btn');
     const btn2 = document.querySelector('#btn2')
     const btn3 = document.querySelector('#btn3')
     const resultDiv = document.querySelector('#result-div');
+    
+
     
     SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
     let recognition = new SpeechRecognition();
@@ -59,10 +63,17 @@
   
     btn.onclick = () => {
       recognition.start();
+      
     }
     btn2.onclick = () => {
       recognition.stop();
     }
+ function toggleText(button_id) {
+     if(document.getElementById('btn').innerHTML == "START"){
+     document.getElementById('btn').innerHTML = "STOP";
+      }else {document.getElementById('btn').innerHTML = "START";
+      }
+}
   </script>
   </body>
   </html>
