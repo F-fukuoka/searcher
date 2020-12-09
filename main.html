@@ -10,7 +10,7 @@
    
     <h1>口癖searcher</h1>
     <div class="bt"><span>
-        <button onclick="click();toggleText(btn.id);" type="button" class="b1" id="btn" value="submit">
+        <button onclick="click()" type="button" class="b1" id="btn" value="submit">
            <font>START</font>
         </button>
         <button type="button" class="b2" id="btn2" value="submit" >
@@ -63,16 +63,11 @@
   
     btn.onclick = () => {
       recognition.start();
-      
     }
     btn2.onclick = () => {
       recognition.stop();
     }
- function toggleText(button_id) {
-     if(document.getElementById('btn').innerHTML == "START"){
-     document.getElementById('btn').innerHTML = "STOP";
-      }else {document.getElementById('btn').innerHTML = "START";
-      }
+ 
 }
   </script>
   </body>
