@@ -18,6 +18,7 @@
            <font>SAVE</font>
         </button>
              </span>
+    </div>
              <div id="result"
         style="padding: 10px; margin-bottom: 10px;
         border: 5px double #333333; border-radius: 10px;" class="text">口癖が〇回検出されました！</div>
@@ -33,7 +34,7 @@
     const btn2 = document.querySelector('#btn2')
     const btn3 = document.querySelector('#btn3')
     const resultDiv = document.querySelector('#result-div');
-  
+    
     SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
     let recognition = new SpeechRecognition();
   
@@ -63,7 +64,6 @@
       recognition.stop();
     }
   </script>
-  </div>
   </body>
   </html>
   
