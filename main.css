@@ -22,6 +22,18 @@ input.b3{
     font-weight: bold;
     padding: 30px 40px;
 }
+.kensaku{
+     text-align: center;
+      margin: 0 auto;
+}
+input.textb{
+    font-size:20px;
+}
+input.b4{
+    font-size:20px;
+    font-weight: bold;
+    padding: px 20px;
+}
 .text{
     font-size:35px;
 }
