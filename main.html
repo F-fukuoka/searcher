@@ -103,6 +103,19 @@
       recognition.stop();
     }
  
+    function ng_word_check($text2 , $ng_word_array){
+/*********************
+*	$textにチェック対象のテキスト、$ng_word_arrayにはNGワードの配列が入ります。
+*	$text中にNGワードが存在しなければ、0を返します。
+*********************/
+	str_replace($ng_word_array, $ng_word_array , $text, $count);
+	return $count ;
+}
+
+$ng_word_array=array('それな　','だよね　','ぴえん　','間違いない　','草　','えぐ　','なんで　','たしかに　','まじ　');
+if( ng_word_check($text , $ng_word_array) == 0 ){
+	echo "NGワードは含まれていませんでした";
+}
 
   </script>
   </body>
