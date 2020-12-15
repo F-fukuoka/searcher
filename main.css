@@ -1,6 +1,7 @@
 h1{
-    font-size: 50px;
+    font-size: 90px;
     text-align: center;
+    color: #4d639f
 }
 .bt{
  text-align: center;
@@ -8,23 +9,49 @@ h1{
 }
 button.b1{
     
-    font-size:30px;
+    font-size:60px;
     font-weight: bold;
     padding: 30px 40px;
+    color:white;
+    background-color: #4d639f;
 }
 button.b2{
-    font-size:30px;
+    font-size:60px;
     font-weight: bold;
     padding: 30px 40px;
+    color:white;
+    background-color:#4d639f;
 }
 input.b3{
-    font-size:30px;
+    font-size:60px;
     font-weight: bold;
     padding: 30px 40px;
+    color:white;
+    background-color: #4d639f;
+}
+.kensaku{
+     text-align: center;
+      margin: 0 auto;
+}
+input.textb1{
+    font-size:40px;
+}
+input.textb2{
+    font-size:40px;
+}
+input.textb3{
+    font-size:40px;
+}
+input.b4{
+    font-size:40px;
+    font-weight: bold;
+    padding: 2px 20px;
+    color:white;
+    background-color: #4d639f;
 }
 .text{
-    font-size:35px;
+    font-size:40px;
 }
 .text2{
-    font-size:35px;
+    font-size:40px;
 }
