@@ -1,5 +1,8 @@
+body{
+    background-color: #D7EEFF	;
+}
 h1{
-    font-size: 90px;
+    font-size: 80px;
     text-align: center;
     color: #4d639f
 }
@@ -9,21 +12,21 @@ h1{
 }
 button.b1{
     
-    font-size:60px;
+    font-size:50px;
     font-weight: bold;
     padding: 30px 40px;
     color:white;
     background-color: #4d639f;
 }
 button.b2{
-    font-size:60px;
+    font-size:50px;
     font-weight: bold;
     padding: 30px 40px;
     color:white;
     background-color:#4d639f;
 }
 input.b3{
-    font-size:60px;
+    font-size:50px;
     font-weight: bold;
     padding: 30px 40px;
     color:white;
@@ -34,44 +37,44 @@ input.b3{
       margin: 0 auto;
 }
 input.textb1{
-    font-size:40px;
+    font-size:30px;
 }
 input.textb2{
-    font-size:40px;
+    font-size:30px;
 }
 input.textb3{
-    font-size:40px;
+    font-size:30px;
 }
 
 input.textb4{
-    font-size:40px;
+    font-size:30px;
 }
 input.textb5{
-    font-size:40px;
+    font-size:30px;
 }
 input.textb6{
-    font-size:40px;
+    font-size:30px;
 }
 input.textb7{
-    font-size:40px;
+    font-size:30px;
 }
 input.textb8{
-    font-size:40px;
+    font-size:30px;
 }
-input.textb9{
-    font-size:40px;
+/*input.textb9{
+    font-size:30px;
 }
 
 input.textb10{
-    font-size:40px;
+    font-size:30px;
 }
 input.textb11{
-    font-size:40px;
+    font-size:30px;
 }
 input.textb12{
-    font-size:40px;
+    font-size:30px;
 }
-/*.kensaku2{
+.kensaku2{
    
     margin: 0 auto;
 }*/
@@ -105,7 +108,7 @@ input.textb12{
   content:    '\2713';    /* チェックの文字 */ 
   font-size:    34px;     /* チェックのサイズ */
   color:      #fff;     /* チェックの色 */
-  background-color: #06f;     /* チェックした時の色 */
+  background-color: #00FF33	;     /* チェックした時の色 */
 }
 .btn{
     text-align: center;
