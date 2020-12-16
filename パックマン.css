@@ -30,7 +30,7 @@ body {
 
 @keyframes dot {
   from {
-    box-shadow: 50px 0 0 #fff, 100px 0 0 #fff, 150px 0 0 #fff, 200px 0 0 #fff, 250px 0 0 #fff, 300px 0 0 #fff, 350px 0 0 #fff, 400px 0 0 #fff, 450px 0 0 #fff, 500px 0 0 #fff, 550px 0 0 #fff, 600px 0 0 #fff;
+    box-shadow: 50px 0 0 #fff,/*口の中*/ 100px 0 0 #fff , 150px 0 0 #fff, 200px 0 0 #fff, 250px 0 0 #fff, 300px 0 0 #fff, 350px 0 0 #fff, 400px 0 0 #fff, 450px 0 0 #fff, 500px 0 0 #fff, 550px 0 0 #fff, 600px 0 0 #fff;
   }
   to {
     box-shadow: 0 0 0 #fff, 50px 0 0 #fff, 100px 0 0 #fff, 150px 0 0 #fff, 200px 0 0 #fff, 250px 0 0 #fff, 300px 0 0 #fff, 350px 0 0 #fff, 400px 0 0 #fff, 450px 0 0 #fff, 500px 0 0 #fff, 550px 0 0 #fff;
