@@ -60,7 +60,7 @@ body {
 }
 
 @keyframes eat {
-  0 { box-shadow:
+  0% { box-shadow:
     0 0 0 transparent, 5px 0 0 transparent, 10px 0 0 transparent, 15px 0 0 transparent, 20px 0 0 #ff0, 25px 0 0 #ff0, 30px 0 0 #ff0, 35px 0 0 #ff0, 40px 0 0 #ff0, 45px 0 0 transparent, 50px 0 0 transparent, 55px 0 0 transparent, 60px 0 0 transparent,
     0 5px 0 transparent, 5px 5px 0 transparent, 10px 5px 0 #ff0, 15px 5px 0 #ff0, 20px 5px 0 #ff0, 25px 5px 0 #ff0, 30px 5px 0 #ff0, 35px 5px 0 #ff0, 40px 5px 0 #ff0, 45px 5px 0 #ff0, 50px 5px 0 #ff0, 55px 5px 0 transparent, 60px 5px 0 transparent,
     0 10px 0 transparent, 5px 10px 0 #ff0, 10px 10px 0 #ff0, 15px 10px 0 #ff0, 20px 10px 0 #ff0, 25px 10px 0 #ff0, 30px 10px 0 #ff0, 35px 10px 0 #ff0, 40px 10px 0 #ff0, 45px 10px 0 #ff0, 50px 10px 0 #ff0, 55px 10px 0 #ff0, 60px 10px 0 transparent,
