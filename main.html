@@ -7,7 +7,9 @@
     <title>口癖searcher</title>
 </head>
 <body>
-
+  <div id="loading">
+    <div class="spinner"></div>
+  </div>
     <h1>口癖searcher</h1>
     <div class="bt"><span>
         <button onclick="click()" type="button" class="b1" id="btn" value="submit">
@@ -28,7 +30,11 @@
         <input type="text" name="id" class="textb6" placeholder="口癖⑥"><br>
         <input type="text" name="id" class="textb7" placeholder="口癖⑦">
         <input type="text" name="id" class="textb8" placeholder="口癖⑧"><br>
-
+       <!-- <input type="text" name="id" class="textb9" placeholder="口癖⑨"><br>
+        <input type="text" name="id" class="textb10" placeholder="口癖⑩">
+        <input type="text" name="id" class="textb11" placeholder="口癖⑪">
+        <input type="text" name="id" class="textb12" placeholder="口癖⑫"><br>
+        <br>-->
        <input type="checkbox" id="ku1"class="k1" value="1">
        <label for="ku1">だよね　</label>
         <input type="checkbox" id="ku2"class="k2" value="2">
@@ -99,17 +105,17 @@
       recognition.stop();
     }
  
-    function ng_word_check($result , $ng_word_array){
+    function ng_word_check($text2 , $ng_word_array){
 /*********************
 *	$textにチェック対象のテキスト、$ng_word_arrayにはNGワードの配列が入ります。
 *	$text中にNGワードが存在しなければ、0を返します。
 *********************/
-	str_replace($ng_word_array, $ng_word_array , $result, $count);
+	str_replace($ng_word_array, $ng_word_array , $text2, $count);
 	return $count ;
 }
 
 $ng_word_array=array('それな　','だよね　','ぴえん　','間違いない　','草　','えぐ　','なんで　','たしかに　','まじ　');
-if( ng_word_check($result , $ng_word_array) == 0 ){
+if( ng_word_check($text2 , $ng_word_array) == 0 ){
 	//echo "NGワードは含まれていませんでした";
 }
 
