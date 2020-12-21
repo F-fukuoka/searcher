@@ -18,7 +18,8 @@ body{
 h1{
     font-size: 80px;
     text-align: center;
-    color: #4d639f
+    color: #4d639f;
+    margin: 0px 0px ;
 }
 h3{
     text-align: center;
