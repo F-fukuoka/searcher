@@ -7,6 +7,7 @@
     <title>口癖searcher</title>
 </head>
 <body>
+<<<<<<< HEAD
 
     <h1>口癖Searcher</h1>
     <h3>~使い方~<br>
@@ -16,6 +17,12 @@
       ④Searchを押す<br>
       ⑤SAVEを押して保存
     </h3>
+=======
+  <div id="loading">
+    <div class="spinner"></div>
+  </div>
+    <h1>口癖searcher</h1>
+>>>>>>> d207d750d0a729a1b1737dd55feaf9e0bc6a712a
     <div class="bt"><span>
         <button onclick="click()" type="button" class="b1" id="btn" value="submit">
            <font>START</font>
@@ -115,12 +122,12 @@
 *	$textにチェック対象のテキスト、$ng_word_arrayにはNGワードの配列が入ります。
 *	$text中にNGワードが存在しなければ、0を返します。
 *********************/
-	str_replace($ng_word_array, $ng_word_array , $text, $count);
+	str_replace($ng_word_array, $ng_word_array , $text2, $count);
 	return $count ;
 }
 
 $ng_word_array=array('それな　','だよね　','ぴえん　','間違いない　','草　','えぐ　','なんで　','たしかに　','まじ　');
-if( ng_word_check($text , $ng_word_array) == 0 ){
+if( ng_word_check($text2 , $ng_word_array) == 0 ){
 	//echo "NGワードは含まれていませんでした";
 }
 
