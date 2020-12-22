@@ -73,23 +73,6 @@ input.textb7{
 input.textb8{
     font-size:30px;
 }
-/*input.textb9{
-    font-size:30px;
-}
-
-input.textb10{
-    font-size:30px;
-}
-input.textb11{
-    font-size:30px;
-}
-input.textb12{
-    font-size:30px;
-}
-.kensaku2{
-   
-    margin: 0 auto;
-}*/
 .kensaku label{
    padding-left:   38px;     /* ラベルの位置 */
   font-size:    32px;
@@ -126,7 +109,7 @@ input.textb12{
     text-align: center;
       margin: 0 auto;
 }
-input.b4{
+input.b3{
     font-size:50px;
     font-weight: bold;
     padding: 30px 40px;
