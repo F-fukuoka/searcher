@@ -28,7 +28,7 @@ h3{
  text-align: center;
  margin: 0 auto;
 }
-button.b1{
+input.b1{
     
     font-size:50px;
     font-weight: bold;
@@ -36,14 +36,8 @@ button.b1{
     color:white;
     background-color: #4d639f;
 }
-button.b2{
-    font-size:50px;
-    font-weight: bold;
-    padding: 30px 40px;
-    color:white;
-    background-color:#4d639f;
-}
-input.b3{
+
+input.b2{
     font-size:50px;
     font-weight: bold;
     padding: 30px 40px;

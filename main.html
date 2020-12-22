@@ -23,13 +23,8 @@
   </div>-->
 
     <div class="bt"><span>
-        <button onclick="click()" type="button" class="b1" id="btn" value="submit">
-           <font>START</font>
-        </button>
-        <button type="button" class="b2" id="btn2" value="submit" >
-           <font>STOP</font>
-        </button>
-        <input type="button" class="b3" id="btn3" value="SAVE" onclick="window.open('https://docs.google.com/document/u/0/')">
+        <input   type="button" onclick="func(this)"class="b1" id="btn" value="START">
+        <input type="button" class="b2" id="btn2" value="SAVE" onclick="window.open('https://docs.google.com/document/u/0/')">
              </span>
     </div>
     <div class="kensaku"><br>
@@ -74,8 +69,7 @@
 
 <script>
     const btn = document.querySelector('#btn');
-    const btn2 = document.querySelector('#btn2')
-    const btn3 = document.querySelector('#btn3')
+    const btn2 = document.querySelector('#btn2');
     const resultDiv = document.querySelector('#result-div');
     
 
@@ -101,13 +95,21 @@
       }
       resultDiv.innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</i>';
     }
+
+
+  function func(Button){
+if( Button.value == "START" ){
+  recognition.start();
+  Button.value = "STOP";
+  return;
+  }
+if( Button.value == "STOP" ){
+  recognition.stop();
+  Button.value = "START";
+  return;
+  }
+}
   
-    btn.onclick = () => {
-      recognition.start();
-    }
-    btn2.onclick = () => {
-      recognition.stop();
-    }
  
     function ng_word_check($text2 , $ng_word_array){
 /*********************
