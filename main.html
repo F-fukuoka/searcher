@@ -21,6 +21,7 @@
   <!--<div id="loading">
     <div class="spinner"></div>
   </div>-->
+
     <div class="bt"><span>
         <button onclick="click()" type="button" class="b1" id="btn" value="submit">
            <font>START</font>
@@ -41,22 +42,22 @@
         <input type="text" name="id" class="textb7" placeholder="口癖⑦">
         <input type="text" name="id" class="textb8" placeholder="口癖⑧"><br>
     
-       <input type="checkbox" id="ku1"class="k1" value="1">
-       <label for="ku1">えー　</label>
-        <input type="checkbox" id="ku2"class="k2" value="2">
-       <label for="ku2">なるほど　</label>
-       <input type="checkbox" id="ku3"class="k3" value="3">
-       <label for="ku3">そうですね　</label><br>
-       <input type="checkbox" id="ku4"class="k4" value="4">
-       <label for="ku4">ていうか　</label>
-       <input type="checkbox" id="ku5"class="k5" value="5">
-       <label for="ku5">あの　</label>
-       <input type="checkbox" id="ku6"class="k6" value="6">
-       <label for="ku6">それは　</label><br>
-       <input type="checkbox" id="ku7"class="k7" value="7">
-       <label for="ku7">えっと　</label>
-       <input type="checkbox" id="ku8"class="k8" value="8">
-    </div><br>
+        <input type="checkbox" id="ku1"class="k1" value="1">
+        <label for="ku1">えー　</label>
+         <input type="checkbox" id="ku2"class="k2" value="2">
+        <label for="ku2">なるほど　</label>
+        <input type="checkbox" id="ku3"class="k3" value="3">
+        <label for="ku3">そうですね　</label><br>
+        <input type="checkbox" id="ku4"class="k4" value="4">
+        <label for="ku4">ていうか　</label>
+        <input type="checkbox" id="ku5"class="k5" value="5">
+        <label for="ku5">あの　</label>
+        <input type="checkbox" id="ku6"class="k6" value="6">
+        <label for="ku6">それは　</label><br>
+        <input type="checkbox" id="ku7"class="k7" value="7">
+        <label for="ku7">えっと　</label>
+        <input type="checkbox" id="ku8"class="k8" value="8">
+     </div><br>
 
        <div class="btn">
         <input type="button" class="b4" value="Search">
@@ -83,7 +84,7 @@
     let recognition = new SpeechRecognition();
   
     recognition.lang = 'ja-JP';
-    recognition.interimResults = true;//音声認識しっぱなしにする(ただし、1分間沈黙が続くと終了)
+    recognition.interimResults = true;//音声認識しっぱなしにする(ただし、沈黙が続くと終了)
     recognition.continuous = true;
   
     let finalTranscript = ''; // 確定した(黒の)認識結果
@@ -117,7 +118,7 @@
 	return $count ;
 }
 
-$ng_word_array=array('それな　','だよね　','ぴえん　','間違いない　','草　','えぐ　','なんで　','たしかに　','まじ　');
+$ng_word_array=array('えー　','あの　','そうですね　','ていうか　','えっと　','なるほど　','それは　');
 if( ng_word_check($text2 , $ng_word_array) == 0 ){
 	//echo "NGワードは含まれていませんでした";
 }
