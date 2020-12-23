@@ -26,30 +26,16 @@
              </span>
     </div>
     <div class="kensaku"><br>
-        <input type="text" name="id" class="textb1" placeholder="口癖①">
-        <input type="text" name="id" class="textb2" placeholder="口癖②"><br>
-        <input type="text" name="id" class="textb3" placeholder="口癖③">
-        <input type="text" name="id" class="textb4" placeholder="口癖④"><br>
-        <input type="text" name="id" class="textb5" placeholder="口癖⑤">
-        <input type="text" name="id" class="textb6" placeholder="口癖⑥"><br>
-        <input type="text" name="id" class="textb7" placeholder="口癖⑦">
-        <input type="text" name="id" class="textb8" placeholder="口癖⑧"><br>
-    
-        <input type="checkbox" id="ku1"class="k1" value="1">
-        <label for="ku1">えー　</label>
-         <input type="checkbox" id="ku2"class="k2" value="2">
-        <label for="ku2">なるほど　</label>
-        <input type="checkbox" id="ku3"class="k3" value="3">
-        <label for="ku3">そうですね　</label><br>
-        <input type="checkbox" id="ku4"class="k4" value="4">
-        <label for="ku4">ていうか　</label>
-        <input type="checkbox" id="ku5"class="k5" value="5">
-        <label for="ku5">あの　</label>
-        <input type="checkbox" id="ku6"class="k6" value="6">
-        <label for="ku6">それは　</label><br>
-        <input type="checkbox" id="ku7"class="k7" value="7">
-        <label for="ku7">えっと　</label>
-        <input type="checkbox" id="ku8"class="k8" value="8">
+        <input type="text" name="id" class="textb1" placeholder="えー">
+        <input type="text" name="id" class="textb2" placeholder="なるほど"><br>
+        <input type="text" name="id" class="textb3" placeholder="そうですね">
+        <input type="text" name="id" class="textb4" placeholder="ていうか"><br>
+        <input type="text" name="id" class="textb5" placeholder="あの">
+        <input type="text" name="id" class="textb6" placeholder="それは"><br>
+        <input type="text" name="id" class="textb7" placeholder="えっと">
+        <input type="text" name="id" class="textb8" placeholder="なんか"><br>
+        <input type="text" name="id" class="textb9" placeholder="口癖">
+        <input type="text" name="id" class="textb10" placeholder="口癖"><br>
      </div><br>
 
        <div class="btn">
@@ -59,7 +45,7 @@
       <!--上のtextbox-->
        <div id="result"
         style="padding: 10px; margin-bottom: 10px;
-        border: 5px double #333333; border-radius: 10px;" class="text">口癖が〇回検出されました！</div>
+        border: 5px double #333333; border-radius: 10px;" class="text" onclick="func(this)"></div>
         <!--下のtextbox-->
         <div id="result-div"
         style="padding: 10px; margin-bottom: 10px;
@@ -70,6 +56,8 @@
 <script>
     const btn = document.querySelector('#btn');//START,STOPボタンの定義
     const btn2 = document.querySelector('#btn2');//SAVEボタンの定義
+    const btn3 = document.querySelector('#btn3');
+    const result=document.querySelector('#result');
     const resultDiv = document.querySelector('#result-div');//音声を文字化したもの(text2)の定義
     
 
@@ -110,22 +98,29 @@ if( Button.value == "STOP" ){
   }
 }
   
- 
-//     function ng_word_check($text2 , $ng_word_array){
+ //searchボタンを押したら、回数を検出
+  function ng(text2){
 // /*********************
 // *	$textにチェック対象のテキスト、$ng_word_arrayにはNGワードの配列が入ります。
 // *	$text中にNGワードが存在しなければ、0を返します。
 // *********************/
-// 	str_replace($ng_word_array, $ng_word_array , $text2, $count);
-// 	return $count ;
-// }
+	//str_replace($ng_word_array, $ng_word_array , $text2, $count);
+ 	//return $count ;
+ //}
 
-// $ng_word_array=array('えー　','あの　','そうですね　','ていうか　','えっと　','なるほど　','それは　');
-// if( ng_word_check($text2 , $ng_word_array) == 0 ){
-// 	//echo "NGワードは含まれていませんでした";
-// }
+ var target =/k1/;
+ if(text2.value == target){
+  var count = ( text.match( new RegExp( target, "g" ) ) || [] ).length ;
+}
+document.getElementById("b3").onclick = function() {
+  result.innerHTML = (target + count +'回検出しました。');
+};
+ 
+//   $ng_word_array=array('えー　','あの　','そうですね　','ていうか　','えっと　','なるほど　','それは　');
+//  if( ng_word_check($text2 , $ng_word_array) == 0 ){
+//  	//echo "NGワードは含まれていませんでした";
+ }
 
   </script>
   </body>
   </html>
-  
