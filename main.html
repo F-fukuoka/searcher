@@ -21,7 +21,7 @@
 
 
     <div class="bt"><span>
-        <input type="button" class="b1" id="btn" value="START" onclick="func(this)">
+        <input type="button" class="b1" id="btn" value="START" onclick="st(this)">
         <input type="button" class="b2" id="btn2" value="SAVE" onclick="window.open('https://docs.google.com/document/u/0/')">
              </span>
     </div>
@@ -56,9 +56,11 @@
         <input type="button" class="b3" value="Search">
     </div>
       <br>
+      <!--上のtextbox-->
        <div id="result"
         style="padding: 10px; margin-bottom: 10px;
         border: 5px double #333333; border-radius: 10px;" class="text">口癖が〇回検出されました！</div>
+        <!--下のtextbox-->
         <div id="result-div"
         style="padding: 10px; margin-bottom: 10px;
         border: 5px double #333333; border-radius: 10px;" class="text2"></div>
@@ -66,12 +68,12 @@
     <!--html終了 画面レイアウト-->
 
 <script>
-    const btn = document.querySelector('#btn');
-    const btn2 = document.querySelector('#btn2');
-    const resultDiv = document.querySelector('#result-div');
+    const btn = document.querySelector('#btn');//START,STOPボタンの定義
+    const btn2 = document.querySelector('#btn2');//SAVEボタンの定義
+    const resultDiv = document.querySelector('#result-div');//音声を文字化したもの(text2)の定義
     
 
-    
+    //音声認識と文字化
     SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
     let recognition = new SpeechRecognition();
   
@@ -94,8 +96,8 @@
       resultDiv.innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</i>';
     }
 
-
-  function func(Button){
+//START,STOPボタンの統一
+  function st(Button){
 if( Button.value == "START" ){
   recognition.start();
   Button.value = "STOP";
@@ -109,19 +111,19 @@ if( Button.value == "STOP" ){
 }
   
  
-    function ng_word_check($text2 , $ng_word_array){
-/*********************
-*	$textにチェック対象のテキスト、$ng_word_arrayにはNGワードの配列が入ります。
-*	$text中にNGワードが存在しなければ、0を返します。
-*********************/
-	str_replace($ng_word_array, $ng_word_array , $text2, $count);
-	return $count ;
-}
+//     function ng_word_check($text2 , $ng_word_array){
+// /*********************
+// *	$textにチェック対象のテキスト、$ng_word_arrayにはNGワードの配列が入ります。
+// *	$text中にNGワードが存在しなければ、0を返します。
+// *********************/
+// 	str_replace($ng_word_array, $ng_word_array , $text2, $count);
+// 	return $count ;
+// }
 
-$ng_word_array=array('えー　','あの　','そうですね　','ていうか　','えっと　','なるほど　','それは　');
-if( ng_word_check($text2 , $ng_word_array) == 0 ){
-	//echo "NGワードは含まれていませんでした";
-}
+// $ng_word_array=array('えー　','あの　','そうですね　','ていうか　','えっと　','なるほど　','それは　');
+// if( ng_word_check($text2 , $ng_word_array) == 0 ){
+// 	//echo "NGワードは含まれていませんでした";
+// }
 
   </script>
   </body>
