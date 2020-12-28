@@ -47,7 +47,7 @@
         style="padding: 10px; margin-bottom: 10px;
         border: 5px double #333333; border-radius: 10px;" class="text" onclick="func(this)"></div>
         <!--下のtextbox-->
-        <div id="result-div"
+        <div id="result-div" value=""
         style="padding: 10px; margin-bottom: 10px;
         border: 5px double #333333; border-radius: 10px;" class="text2"></div>
     <!--文字化したものを表示-->
@@ -59,7 +59,7 @@
     const btn3 = document.querySelector('#btn3');
     const result=document.querySelector('#result');
     const resultDiv = document.querySelector('#result-div');//音声を文字化したもの(text2)の定義
-    const resultSpeech = document.getElementById('result-div');//音声を文字化したもの(text2)の定義
+    var resultSpeech = "";
 
     //音声認識と文字化
     SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
@@ -82,6 +82,8 @@
         }
       }
       resultDiv.innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</i>';
+      resultSpeech = finalTranscript;
+      console.log(resultSpeech);
     }
 
 //START,STOPボタンの統一
@@ -100,7 +102,6 @@ if( Button.value == "STOP" ){
   
  //searchボタンを押したら、回数を検出
   function ng(Button){
-<<<<<<< HEAD
  var kensaku1 = document.getElementById('k1').value;
  var kensaku2 = document.getElementById('k2').value;
  var kensaku3 = document.getElementById('k3').value;
@@ -112,20 +113,15 @@ if( Button.value == "STOP" ){
  var kensaku9 = document.getElementById('k9').value;
  var kensaku10 = document.getElementById('k10').value;
 
- console.log(document.getElementById('result-div').value);
- if(resultDiv.value = kensaku1){
-  var count = (resultDiv.match( /k1/, 'g' ) || [] ).length ;
-  console.log(count);
+ console.log(resultSpeech);
+//  resultSpeech を kensaku1 で検索して回数を出力する
+
+//  if(resultDiv.value = kensaku1){
+//   var count = (resultDiv.match( /k1/, 'g' ) || [] ).length ;
+  
 }
 
 document.getElementById('result').innerHTML =  kensaku1  + "を" + count +"回検出しました。";
-=======
- var kousei = document.getElementById('k1').value;
- var target = kousei;
- var count = "3";
-  document.write.innerHTML(kousei + "が" + count +"回検出されました");
-//alert(kousei); 
->>>>>>> fb952817096d0a41df8747fe7ec259755db5a7cc
 
 }
 
