@@ -27,15 +27,15 @@
     </div>
     <div class="kensaku"><br>
         <input type="text"  class="textb1" id="k1" placeholder="えー">
-        <input type="text"  class="textb2" id="k1" placeholder="なるほど"><br>
-        <input type="text"  class="textb3" id="k1" placeholder="そうですね">
-        <input type="text"  class="textb4" id="k1" placeholder="ていうか"><br>
-        <input type="text"  class="textb5" id="k1" placeholder="あの">
-        <input type="text"  class="textb6" id="k1" placeholder="それは"><br>
-        <input type="text"  class="textb7" id="k1" placeholder="えっと">
-        <input type="text"  class="textb8" id="k1" placeholder="なんか"><br>
-        <input type="text"  class="textb9" id="k1" placeholder="口癖">
-        <input type="text"  class="textb10" id="k1" placeholder="口癖"><br>
+        <input type="text"  class="textb2" id="k2" placeholder="なるほど"><br>
+        <input type="text"  class="textb3" id="k3" placeholder="そうですね">
+        <input type="text"  class="textb4" id="k4" placeholder="ていうか"><br>
+        <input type="text"  class="textb5" id="k5" placeholder="あの">
+        <input type="text"  class="textb6" id="k6" placeholder="それは"><br>
+        <input type="text"  class="textb7" id="k7" placeholder="えっと">
+        <input type="text"  class="textb8" id="k8" placeholder="なんか"><br>
+        <input type="text"  class="textb9" id="k9" placeholder="口癖">
+        <input type="text"  class="textb10" id="k10" placeholder="口癖"><br>
      </div><br>
 
        <div class="btn">
@@ -59,7 +59,7 @@
     const btn3 = document.querySelector('#btn3');
     const result=document.querySelector('#result');
     const resultDiv = document.querySelector('#result-div');//音声を文字化したもの(text2)の定義
-    
+    const resultSpeech = document.getElementById('result-div');//音声を文字化したもの(text2)の定義
 
     //音声認識と文字化
     SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
@@ -100,26 +100,26 @@ if( Button.value == "STOP" ){
   
  //searchボタンを押したら、回数を検出
   function ng(Button){
-// /*********************
-// *	$textにチェック対象のテキスト、$ng_word_arrayにはNGワードの配列が入ります。
-// *	$text中にNGワードが存在しなければ、0を返します。
-// *********************/
-	//str_replace($ng_word_array, $ng_word_array , $text2, $count);
- 	//return $count ;
- //}
+ var kensaku1 = document.getElementById('k1').value;
+ var kensaku2 = document.getElementById('k2').value;
+ var kensaku3 = document.getElementById('k3').value;
+ var kensaku4 = document.getElementById('k4').value;
+ var kensaku5 = document.getElementById('k5').value;
+ var kensaku6 = document.getElementById('k6').value;
+ var kensaku7 = document.getElementById('k7').value;
+ var kensaku8 = document.getElementById('k8').value;
+ var kensaku9 = document.getElementById('k9').value;
+ var kensaku10 = document.getElementById('k10').value;
 
- var target =/k1/;
- if(resultDiv.value == target){
-  var count = ( text2.match( new RegExp( /k1/, 'g' ) ) || [] ).length ;
+ console.log(document.getElementById('result-div').value);
+ if(resultDiv.value = kensaku1){
+  var count = (resultDiv.match( /k1/, 'g' ) || [] ).length ;
+  console.log(count);
 }
-document.write(target + count +"回検出しました。");
-     
-  // result.innerHTML = target + count +'回検出しました。';
- 
-//   $ng_word_array=array('えー　','あの　','そうですね　','ていうか　','えっと　','なるほど　','それは　');
-//  if( ng_word_check($text2 , $ng_word_array) == 0 ){
-//  	//echo "NGワードは含まれていませんでした";
- }
+
+document.getElementById('result').innerHTML =  kensaku1  + "を" + count +"回検出しました。";
+
+}
 
   </script>
   </body>
