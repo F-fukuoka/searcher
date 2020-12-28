@@ -26,24 +26,24 @@
              </span>
     </div>
     <div class="kensaku"><br>
-        <input type="text" name="id" class="textb1" placeholder="えー">
-        <input type="text" name="id" class="textb2" placeholder="なるほど"><br>
-        <input type="text" name="id" class="textb3" placeholder="そうですね">
-        <input type="text" name="id" class="textb4" placeholder="ていうか"><br>
-        <input type="text" name="id" class="textb5" placeholder="あの">
-        <input type="text" name="id" class="textb6" placeholder="それは"><br>
-        <input type="text" name="id" class="textb7" placeholder="えっと">
-        <input type="text" name="id" class="textb8" placeholder="なんか"><br>
-        <input type="text" name="id" class="textb9" placeholder="口癖">
-        <input type="text" name="id" class="textb10" placeholder="口癖"><br>
+        <input type="text"  class="textb1" id="k1" placeholder="えー">
+        <input type="text"  class="textb2" id="k1" placeholder="なるほど"><br>
+        <input type="text"  class="textb3" id="k1" placeholder="そうですね">
+        <input type="text"  class="textb4" id="k1" placeholder="ていうか"><br>
+        <input type="text"  class="textb5" id="k1" placeholder="あの">
+        <input type="text"  class="textb6" id="k1" placeholder="それは"><br>
+        <input type="text"  class="textb7" id="k1" placeholder="えっと">
+        <input type="text"  class="textb8" id="k1" placeholder="なんか"><br>
+        <input type="text"  class="textb9" id="k1" placeholder="口癖">
+        <input type="text"  class="textb10" id="k1" placeholder="口癖"><br>
      </div><br>
 
        <div class="btn">
-        <input type="button" class="b3" value="Search">
-    </div>
+        <input type="button" class="b3" id="btn3" value="Search" onclick="ng(this)">
+   </div>
       <br>
       <!--上のtextbox-->
-       <div id="result"
+       <div id="result" 
         style="padding: 10px; margin-bottom: 10px;
         border: 5px double #333333; border-radius: 10px;" class="text" onclick="func(this)"></div>
         <!--下のtextbox-->
@@ -56,8 +56,8 @@
 <script>
     const btn = document.querySelector('#btn');//START,STOPボタンの定義
     const btn2 = document.querySelector('#btn2');//SAVEボタンの定義
-    const btn3 = document.querySelector('#btn3');//Seachボタンの定義
-    const result=document.querySelector('#result');//回数の検出(text)
+    const btn3 = document.querySelector('#btn3');
+    const result=document.querySelector('#result');
     const resultDiv = document.querySelector('#result-div');//音声を文字化したもの(text2)の定義
     
 
@@ -65,7 +65,7 @@
     SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
     let recognition = new SpeechRecognition();
   
-    recognition.lang = 'ja-JP';//日本語
+    recognition.lang = 'ja-JP';
     recognition.interimResults = true;//音声認識しっぱなしにする(ただし、沈黙が続くと終了)
     recognition.continuous = true;
   
@@ -98,9 +98,8 @@ if( Button.value == "STOP" ){
   }
 }
   
-
- //Searchボタンを押したら、回数を検出
-  function ng(text2){
+ //searchボタンを押したら、回数を検出
+  function ng(Button){
 // /*********************
 // *	$textにチェック対象のテキスト、$ng_word_arrayにはNGワードの配列が入ります。
 // *	$text中にNGワードが存在しなければ、0を返します。
@@ -110,12 +109,12 @@ if( Button.value == "STOP" ){
  //}
 
  var target =/k1/;
- if(text2.value == target){
-  var count = ( text.match( new RegExp( target, "g" ) ) || [] ).length ;
+ if(resultDiv.value == target){
+  var count = ( text2.match( new RegExp( /k1/, 'g' ) ) || [] ).length ;
 }
-document.getElementById("b3").onclick = function() {
-  result.innerHTML = (target + count +'回検出しました。');
-};
+document.write(target + count +"回検出しました。");
+     
+  // result.innerHTML = target + count +'回検出しました。';
  
 //   $ng_word_array=array('えー　','あの　','そうですね　','ていうか　','えっと　','なるほど　','それは　');
 //  if( ng_word_check($text2 , $ng_word_array) == 0 ){
