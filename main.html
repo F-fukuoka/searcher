@@ -43,9 +43,6 @@
    </div>
       <br>
       <!--上のtextbox-->
-       <!-- <div id="result" 
-        style="padding: 10px; margin-bottom: 10px;
-        border: 5px double #333333; border-radius: 10px;" class="text"></div> -->
         <div id="result" 
         style="padding: 10px; margin-bottom: 10px;
         border: 5px double #333333; border-radius: 10px;" class="text"></div>
@@ -60,8 +57,8 @@
 <script>
     const btn = document.querySelector('#btn');//START,STOPボタンの定義
     const btn2 = document.querySelector('#btn2');//SAVEボタンの定義
-    const btn3 = document.querySelector('#btn3');
-    const result=document.querySelector('#result');
+    const btn3 = document.querySelector('#btn3');//Seachボタンの定義
+    const result=document.querySelector('#result');//回数を表示するところの定義
     const resultDiv = document.querySelector('#result-div');//音声を文字化したもの(text2)の定義
     var resultSpeech = "";
 
@@ -118,6 +115,7 @@ if( Button.value == "STOP" ){
  var kensaku10 = document.getElementById('k10').value;
 
  console.log(resultSpeech);
+
 //  resultSpeech を kensaku1 で検索して回数を出力する
 var count1 = (resultSpeech.match(new RegExp( kensaku1, 'g' )) || [] ).length;
 var count2 = (resultSpeech.match(new RegExp( kensaku2, 'g' )) || [] ).length;
@@ -129,17 +127,6 @@ var count7 = (resultSpeech.match(new RegExp( kensaku7, 'g' )) || [] ).length;
 var count8 = (resultSpeech.match(new RegExp( kensaku8, 'g' )) || [] ).length;
 var count9 = (resultSpeech.match(new RegExp( kensaku9, 'g' )) || [] ).length;
 var count10 = (resultSpeech.match(new RegExp( kensaku10, 'g' )) || [] ).length;
-
-// document.getElementById('result').innerText =  kensaku1  + "を\n" + count1 +"回検出しました。<br />";
-// document.getElementById('result').innerHTML =  kensaku2  + "を<p />" + count2 +"回検出しました。<br>";
-// document.getElementById('result').innerHTML =  kensaku3  + "を<p />" + count3 +"回検出しました。<br>";
-// document.getElementById('result').innerHTML =  kensaku4  + "を<p />" + count4 +"回検出しました。<br>";
-// document.getElementById('result').innerHTML =  kensaku5  + "を<br />" + count5 +"回検出しました。<br>";
-// document.getElementById('result').innerHTML =  kensaku6  + "を<br />" + count6 +"回検出しました。<br>";
-// document.getElementById('result').innerHTML =  kensaku7  + "を<br />" + count7 +"回検出しました。<br>";
-// document.getElementById('result').innerHTML =  kensaku8  + "を" + count8 +"回検出しました。<br>";
-// document.getElementById('result').innerHTML =  kensaku9  + "を" + count9 +"回検出しました。<br>";
-// document.getElementById('result').innerHTML =  kensaku10  + "を" + count10 +"回検出しました。";
 
 var kaisu = kensaku1  + "を" + count1 +"回検出しました。<br>";
 kaisu += kensaku2  + "を" + count2 +"回検出しました。<br>";
