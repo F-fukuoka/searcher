@@ -115,13 +115,12 @@ if( Button.value == "STOP" ){
 
  console.log(resultSpeech);
 //  resultSpeech を kensaku1 で検索して回数を出力する
-
-//  if(resultDiv.value = kensaku1){
-//   var count = (resultDiv.match( /k1/, 'g' ) || [] ).length ;
-  
+var count = (resultSpeech.match(new RegExp( kensaku1, 'g' )) || [] ).length;
+// console.log(count);
+document.getElementById('result').innerHTML =  kensaku1  + "を" + count +"回検出しました。";
 }
 
-document.getElementById('result').innerHTML =  kensaku1  + "を" + count +"回検出しました。";
+
 
 
 
