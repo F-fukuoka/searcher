@@ -111,7 +111,7 @@ input.textb10{
   color:      #fff;     /* チェックの色 */
   background-color: #00FF33	;     /* チェックした時の色 */
 }
-.btn{
+.butn{
     text-align: center;
       margin: 0 auto;
 }

@@ -25,7 +25,7 @@
         <input type="button" class="b2" id="btn2" value="SAVE" onclick="window.open('https://docs.google.com/document/u/0/')">
              </span>
     </div>
-    <div class="kensaku"><br>
+    <div class="kensaku" ><br>
         <input type="text"  class="textb1" id="k1" placeholder="えー">
         <input type="text"  class="textb2" id="k2" placeholder="なるほど"><br>
         <input type="text"  class="textb3" id="k3" placeholder="そうですね">
@@ -38,7 +38,7 @@
         <input type="text"  class="textb10" id="k10" placeholder="口癖"><br>
      </div><br>
 
-       <div class="btn">
+       <div class="butn">
         <input type="button" class="b3" id="btn3" value="Search" onclick="ng(this)">
    </div>
       <br>
@@ -100,6 +100,7 @@ if( Button.value == "STOP" ){
   
  //searchボタンを押したら、回数を検出
   function ng(Button){
+<<<<<<< HEAD
  var kensaku1 = document.getElementById('k1').value;
  var kensaku2 = document.getElementById('k2').value;
  var kensaku3 = document.getElementById('k3').value;
@@ -118,6 +119,13 @@ if( Button.value == "STOP" ){
 }
 
 document.getElementById('result').innerHTML =  kensaku1  + "を" + count +"回検出しました。";
+=======
+ var kousei = document.getElementById('k1').value;
+ var target = kousei;
+ var count = "3";
+  document.write.innerHTML(kousei + "が" + count +"回検出されました");
+//alert(kousei); 
+>>>>>>> fb952817096d0a41df8747fe7ec259755db5a7cc
 
 }
 
