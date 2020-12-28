@@ -56,8 +56,8 @@
 <script>
     const btn = document.querySelector('#btn');//START,STOPボタンの定義
     const btn2 = document.querySelector('#btn2');//SAVEボタンの定義
-    const btn3 = document.querySelector('#btn3');
-    const result=document.querySelector('#result');
+    const btn3 = document.querySelector('#btn3');//Seachボタンの定義
+    const result=document.querySelector('#result');//回数の検出(text)
     const resultDiv = document.querySelector('#result-div');//音声を文字化したもの(text2)の定義
     
 
@@ -65,7 +65,7 @@
     SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
     let recognition = new SpeechRecognition();
   
-    recognition.lang = 'ja-JP';
+    recognition.lang = 'ja-JP';//日本語
     recognition.interimResults = true;//音声認識しっぱなしにする(ただし、沈黙が続くと終了)
     recognition.continuous = true;
   
@@ -98,7 +98,8 @@ if( Button.value == "STOP" ){
   }
 }
   
- //searchボタンを押したら、回数を検出
+
+ //Searchボタンを押したら、回数を検出
   function ng(text2){
 // /*********************
 // *	$textにチェック対象のテキスト、$ng_word_arrayにはNGワードの配列が入ります。
