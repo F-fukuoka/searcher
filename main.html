@@ -38,7 +38,7 @@
         <input type="text"  class="textb10" id="k1" placeholder="口癖"><br>
      </div><br>
 
-       <div class="btn">
+       <div class="butn">
         <input type="button" class="b3" id="btn3" value="Search" onclick="ng(this)">
    </div>
       <br>
@@ -101,8 +101,9 @@ if( Button.value == "STOP" ){
  //searchボタンを押したら、回数を検出
   function ng(Button){
  var kousei = document.getElementById('k1').value;
- //var count = 
-document.write(kousei + "回検出されました");
+ var target = kousei;
+ var count = "3";
+  document.write.innerHTML(kousei + "が" + count +"回検出されました");
 //alert(kousei); 
 
 }
