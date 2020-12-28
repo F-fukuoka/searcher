@@ -25,7 +25,7 @@
         <input type="button" class="b2" id="btn2" value="SAVE" onclick="window.open('https://docs.google.com/document/u/0/')">
              </span>
     </div>
-    <div class="kensaku"><br>
+    <div class="kensaku" ><br>
         <input type="text"  class="textb1" id="k1" placeholder="えー">
         <input type="text"  class="textb2" id="k1" placeholder="なるほど"><br>
         <input type="text"  class="textb3" id="k1" placeholder="そうですね">
@@ -100,26 +100,12 @@ if( Button.value == "STOP" ){
   
  //searchボタンを押したら、回数を検出
   function ng(Button){
-// /*********************
-// *	$textにチェック対象のテキスト、$ng_word_arrayにはNGワードの配列が入ります。
-// *	$text中にNGワードが存在しなければ、0を返します。
-// *********************/
-	//str_replace($ng_word_array, $ng_word_array , $text2, $count);
- 	//return $count ;
- //}
+ var kousei = document.getElementById('k1').value;
+ //var count = 
+document.write(kousei + "回検出されました");
+//alert(kousei); 
 
- var target =/k1/;
- if(resultDiv.value == target){
-  var count = ( text2.match( new RegExp( /k1/, 'g' ) ) || [] ).length ;
 }
-document.write(target + count +"回検出しました。");
-     
-  // result.innerHTML = target + count +'回検出しました。';
- 
-//   $ng_word_array=array('えー　','あの　','そうですね　','ていうか　','えっと　','なるほど　','それは　');
-//  if( ng_word_check($text2 , $ng_word_array) == 0 ){
-//  	//echo "NGワードは含まれていませんでした";
- }
 
   </script>
   </body>
