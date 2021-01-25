@@ -1,77 +1,78 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-    <link href='main.css' rel="stylesheet" type="text/css">
-    
-    <meta charset="UTF-8">
-    <title>口癖searcher</title>
+  <link href='main.css' rel="stylesheet" type="text/css">
+
+  <meta charset="UTF-8">
+  <title>口癖searcher</title>
 </head>
+
 <body>
 
-    <h1>口癖Searcher</h1>
-    <h3>~使い方~<br>
-      ①STARTを押す<br>
-      ②STOPを押す<br>
-      ③検出したい口癖を入力<br>
-      ④Searchを押す<br>
-      ⑤SAVEを押して保存<br>
-      ※マイクを近づけて話してください<br>
-      ※沈黙だと自動停止するので、もう一度STARTを押す
-    </h3>
+  <h1>口癖Searcher</h1>
+  <h3>~使い方~<br>
+    ①STARTを押す<br>
+    ②STOPを押す<br>
+    ③検出したい口癖を入力<br>
+    ④Searchを押す<br>
+    ⑤SAVEを押して保存<br>
+    ※マイクを近づけて話してください<br>
+    ※沈黙だと自動停止するので、もう一度STARTを押す
+  </h3>
 
 
-    <div class="bt"><span>
-        <input type="button" class="b1" id="btn" value="START" onclick="st(this)">
-        <input type="button" class="b2" id="btn2" value="SAVE" onclick="window.open('https://docs.google.com/document/u/0/')">
-             </span>
-    </div>
-    <div class="kensaku" ><br>
-        <input type="text"  class="textb1" id="k1" placeholder="えー">
-        <input type="text"  class="textb2" id="k2" placeholder="なるほど"><br>
-        <input type="text"  class="textb3" id="k3" placeholder="そうですね">
-        <input type="text"  class="textb4" id="k4" placeholder="ていうか"><br>
-        <input type="text"  class="textb5" id="k5" placeholder="あの">
-        <input type="text"  class="textb6" id="k6" placeholder="それは"><br>
-        <input type="text"  class="textb7" id="k7" placeholder="えっと">
-        <input type="text"  class="textb8" id="k8" placeholder="なんか"><br>
-        <input type="text"  class="textb9" id="k9" placeholder="口癖">
-        <input type="text"  class="textb10" id="k10" placeholder="口癖"><br>
-     </div><br>
+  <div class="bt"><span>
+      <input type="button" class="b1" id="btn" value="START" onclick="st(this)">
+      <input type="button" class="b2" id="btn2" value="SAVE"
+        onclick="window.open('https://docs.google.com/document/u/0/')">
+    </span>
+  </div>
+  <div class="kensaku"><br>
+    <input type="text" class="textb1" id="k1" placeholder="えー">
+    <input type="text" class="textb2" id="k2" placeholder="なるほど"><br>
+    <input type="text" class="textb3" id="k3" placeholder="そうですね">
+    <input type="text" class="textb4" id="k4" placeholder="ていうか"><br>
+    <input type="text" class="textb5" id="k5" placeholder="あの">
+    <input type="text" class="textb6" id="k6" placeholder="それは"><br>
+    <input type="text" class="textb7" id="k7" placeholder="えっと">
+    <input type="text" class="textb8" id="k8" placeholder="なんか"><br>
+    <input type="text" class="textb9" id="k9" placeholder="口癖">
+    <input type="text" class="textb10" id="k10" placeholder="口癖"><br>
+  </div><br>
 
-       <div class="butn">
-        <input type="button" class="b3" id="btn3" value="Search" onclick="ng(this)">
-   </div>
-      <br>
-      <!--上のtextbox-->
-        <div id="result" 
-        style="padding: 10px; margin-bottom: 10px;
+  <div class="butn">
+    <input type="button" class="b3" id="btn3" value="Search" onclick="ng(this)">
+  </div>
+  <br>
+  <!--上のtextbox-->
+  <div id="result" style="padding: 10px; margin-bottom: 10px;
         border: 5px double #333333; border-radius: 10px;" class="text"></div>
 
-    <!--下のtextbox-->
-        <div id="result-div" value=""
-        style="padding: 10px; margin-bottom: 10px;
+  <!--下のtextbox-->
+  <div id="result-div" value="" style="padding: 10px; margin-bottom: 10px;
         border: 5px double #333333; border-radius: 10px;" class="text2"></div>
-    <!--文字化したものを表示-->
-    <!--html終了 画面レイアウト-->
+  <!--文字化したものを表示-->
+  <!--html終了 画面レイアウト-->
 
-<script>
+  <script>
     const btn = document.querySelector('#btn');//START,STOPボタンの定義
     const btn2 = document.querySelector('#btn2');//SAVEボタンの定義
     const btn3 = document.querySelector('#btn3');//Seachボタンの定義
-    const result=document.querySelector('#result');//回数を表示するところの定義
+    const result = document.querySelector('#result');//回数を表示するところの定義
     const resultDiv = document.querySelector('#result-div');//音声を文字化したもの(text2)の定義
     var resultSpeech = "";
 
     //音声認識と文字化
     SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
     let recognition = new SpeechRecognition();
-  
+
     recognition.lang = 'ja-JP';
     recognition.interimResults = true;//音声認識しっぱなしにする(ただし、沈黙が続くと終了)
     recognition.continuous = true;
-  
+
     let finalTranscript = ''; // 確定した(黒の)認識結果
-  
+
     recognition.onresult = (event) => {
       let interimTranscript = ''; // 暫定(灰色)の認識結果
       for (let i = event.resultIndex; i < event.results.length; i++) {
@@ -87,62 +88,73 @@
       console.log(resultSpeech);
     }
 
-//START,STOPボタンの統一
-  function st(Button){
-if( Button.value == "START" ){
-  recognition.start();
-  Button.value = "STOP";
-  return;
-  }
-if( Button.value == "STOP" ){
-  recognition.stop();
-  Button.value = "START";
-  return;
-  }
-}
+    //START,STOPボタンの統一
+    function st(Button) {
+      if (Button.value == "START") {
+        recognition.start();
+        Button.value = "STOP";
+        return;
+      }
+      if (Button.value == "STOP") {
+        recognition.stop();
+        Button.value = "START";
+        return;
+      }
+    }
+
+    //searchボタンを押したら、回数を検出
+    function ng(Button) {
+      var kensaku1 = document.getElementById('k1').value;
+      var kensaku2 = document.getElementById('k2').value;
+      var kensaku3 = document.getElementById('k3').value;
+      var kensaku4 = document.getElementById('k4').value;
+      var kensaku5 = document.getElementById('k5').value;
+      var kensaku6 = document.getElementById('k6').value;
+      var kensaku7 = document.getElementById('k7').value;
+      var kensaku8 = document.getElementById('k8').value;
+      var kensaku9 = document.getElementById('k9').value;
+      var kensaku10 = document.getElementById('k10').value;
+      
+
+      console.log(resultSpeech);
+
+      //  resultSpeech を kensaku1 で検索して回数を出力する
+      var count1 = (resultSpeech.match(new RegExp(kensaku1, 'g')) || []).length;
+      var count2 = (resultSpeech.match(new RegExp(kensaku2, 'g')) || []).length;
+      var count3 = (resultSpeech.match(new RegExp(kensaku3, 'g')) || []).length;
+      var count4 = (resultSpeech.match(new RegExp(kensaku4, 'g')) || []).length;
+      var count5 = (resultSpeech.match(new RegExp(kensaku5, 'g')) || []).length;
+      var count6 = (resultSpeech.match(new RegExp(kensaku6, 'g')) || []).length;
+      var count7 = (resultSpeech.match(new RegExp(kensaku7, 'g')) || []).length;
+      var count8 = (resultSpeech.match(new RegExp(kensaku8, 'g')) || []).length;
+      var count9 = (resultSpeech.match(new RegExp(kensaku9, 'g')) || []).length;
+      var count10 = (resultSpeech.match(new RegExp(kensaku10, 'g')) || []).length;
+
+
+      
+
+      var kaisu ="『" + kensaku1 + "』" + "➡" + count1 + "回。";
+      kaisu += "『" + kensaku2 + "』"  + "➡" + count2 + "回。<br>";
+      kaisu += "『" + kensaku3 + "』"  + "➡" + count3 + "回。";
+      kaisu += "『" + kensaku4 + "』"  + "➡" + count4 + "回。<br>";
+      kaisu += "『" + kensaku5 + "』"  + "➡" + count5 + "回。";
+      kaisu += "『" + kensaku6 + "』"  + "➡" + count6 + "回。<br>";
+      kaisu += "『" + kensaku7 + "』"  + "➡" + count7 + "回。";
+      kaisu += "『" + kensaku8 + "』"  + "➡" + count8 + "回。<br>";
+      kaisu += "『" + kensaku9 + "』"  + "➡" + count9 + "回。";
+      kaisu += "『" + kensaku10 + "』"  + "➡" + count10 + "回。";
+
+
+      document.getElementById('result').innerHTML = kaisu;
+
+
+      
+   
+
+
+    
   
- //searchボタンを押したら、回数を検出
-  function ng(Button){
- var kensaku1 = document.getElementById('k1').value;
- var kensaku2 = document.getElementById('k2').value;
- var kensaku3 = document.getElementById('k3').value;
- var kensaku4 = document.getElementById('k4').value;
- var kensaku5 = document.getElementById('k5').value;
- var kensaku6 = document.getElementById('k6').value;
- var kensaku7 = document.getElementById('k7').value;
- var kensaku8 = document.getElementById('k8').value;
- var kensaku9 = document.getElementById('k9').value;
- var kensaku10 = document.getElementById('k10').value;
-
- console.log(resultSpeech);
-
-//  resultSpeech を kensaku1 で検索して回数を出力する
-var count1 = (resultSpeech.match(new RegExp( kensaku1, 'g' )) || [] ).length;
-var count2 = (resultSpeech.match(new RegExp( kensaku2, 'g' )) || [] ).length;
-var count3 = (resultSpeech.match(new RegExp( kensaku3, 'g' )) || [] ).length;
-var count4 = (resultSpeech.match(new RegExp( kensaku4, 'g' )) || [] ).length;
-var count5 = (resultSpeech.match(new RegExp( kensaku5, 'g' )) || [] ).length;
-var count6 = (resultSpeech.match(new RegExp( kensaku6, 'g' )) || [] ).length;
-var count7 = (resultSpeech.match(new RegExp( kensaku7, 'g' )) || [] ).length;
-var count8 = (resultSpeech.match(new RegExp( kensaku8, 'g' )) || [] ).length;
-var count9 = (resultSpeech.match(new RegExp( kensaku9, 'g' )) || [] ).length;
-var count10 = (resultSpeech.match(new RegExp( kensaku10, 'g' )) || [] ).length;
-
-var kaisu = kensaku1  + "を" + count1 +"回検出しました。<br>";
-kaisu += kensaku2  + "を" + count2 +"回検出しました。<br>";
-kaisu += kensaku3  + "を" + count3 +"回検出しました。<br>";
-kaisu += kensaku4  + "を" + count4 +"回検出しました。<br>";
-kaisu += kensaku5  + "を" + count5 +"回検出しました。<br>";
-kaisu += kensaku6  + "を" + count6 +"回検出しました。<br>";
-kaisu += kensaku7  + "を" + count7 +"回検出しました。<br>";
-kaisu += kensaku8  + "を" + count8 +"回検出しました。<br>";
-kaisu += kensaku9  + "を" + count9 +"回検出しました。<br>";
-kaisu += kensaku10  + "を" + count10 +"回検出しました。<br>";
-
-
-document.getElementById('result').innerHTML = kaisu;
-}
-
   </script>
-  </body>
-  </html>
+</body>
+
+</html>
